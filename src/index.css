@@ -1,3 +1,21 @@
+:root{
+  --dark-scissors-gradient:hsl(39, 89%, 49%);
+  --light-scissors-gradient:hsl(40, 84%, 53%);
+  --light-paper-gradient:hsl(230, 89%, 62%);
+  --dark-paper-gradient: hsl(230, 89%, 65%);
+  --light-rock-gradient: hsl(349, 71%, 52%);
+  --dark-rock-gradient: hsl(349, 70%, 56%);
+  --dark-lizard-gradient:hsl(261, 73%, 60%);
+  --light-lizard-gradient:hsl(261, 72%, 63%);
+  --cyan:hsl(189, 59%, 53%);
+  --light-cyan:hsl(189, 58%, 57%);
+  --dark-text:hsl(229, 25%, 31%);
+  --score-text:hsl(229, 64%, 46%);
+  --header-outline:hsl(217, 16%, 45%);
+  --radial-gradient:hsl(237, 49%, 15%);
+  --light-radial-gradient:hsl(214, 47%, 23%);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
