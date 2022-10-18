@@ -5,9 +5,9 @@ import styled from "styled-components/macro";
 import Header from "./component/Header";
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  //background-color: var(--light-radial-gradient);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--light-radial-gradient);
 `;
 
 function App() {

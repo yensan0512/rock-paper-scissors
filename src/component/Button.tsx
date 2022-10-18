@@ -1,30 +1,33 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const ButtonRule = styled.div`
-    border:1px solid var(white);
+  border: 1px solid white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 453%);
+  border-radius: 8px;
 
-    &:hover {
-        cursor:pointer;
-        text-decoration-color:white;
-        text-decoration-thickness:30%;
-    }
+  &:hover {
+    cursor: pointer;
+    text-decoration-color: white;
+    text-decoration-thickness: 30%;
+  }
 `;
 
 const Text = styled.h3`
-    color:white;
-
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
 `;
 
-
-function Button()
-{
-    return(
+function Button() {
+  return (
     <ButtonRule>
-       <Text> Rule</Text> 
+      <Text> RULES</Text>
     </ButtonRule>
-    )
-
+  );
 }
 
-export default Button
+export default Button;
