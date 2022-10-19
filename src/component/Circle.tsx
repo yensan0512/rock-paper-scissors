@@ -28,10 +28,20 @@ const InternalImg = styled.img(
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  &:hover{
+    cursor:pointer;
+  }
 `
 );
 
-function Circle({ ImgVal }: { ImgVal: string }) {
+export function Circle({
+  ImgVal,
+  onClick,
+}: {
+  ImgVal: string;
+  onClick: () => void;
+}) {
   let ImgUrl = "static/icon-paper.svg";
   let colorItem = "--dark-paper-gradient";
   let transform = "translate(-118%,-123%);";
@@ -47,7 +57,11 @@ function Circle({ ImgVal }: { ImgVal: string }) {
   }
 
   return (
-    <Wrapper colorItemCSS={colorItem} transformCSS={transform}>
+    <Wrapper
+      colorItemCSS={colorItem}
+      transformCSS={transform}
+      onClick={onClick}
+    >
       <InternalImg ImgUrlCSS={ImgUrl} />
     </Wrapper>
   );

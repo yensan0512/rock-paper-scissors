@@ -94,10 +94,32 @@ const Triangle = styled.img`
 
 function Header() {
   const [isRuleOpen, setIsRuleOpen] = useState<boolean>(false);
+  const [isChoiceMake, setIsChoiceMake] = useState<boolean>(false);
 
   let background = "";
   if (isRuleOpen) {
     background = "blur(5px);";
+  }
+
+  if (isChoiceMake) {
+    // #pot {
+    //   bottom: 15%;
+    //   position: absolute;
+    //   -webkit-animation: linear infinite;
+    //   -webkit-animation-name: run;
+    //   -webkit-animation-duration: 5s;
+    // }
+    // @-webkit-keyframes run {
+    //   0% {
+    //     left: 0;
+    //   }
+    //   50% {
+    //     left: calc(100% - 100px);
+    //    }
+    //   100% {
+    //     left: 0;
+    //   }
+    // }
   }
 
   return (
@@ -114,9 +136,9 @@ function Header() {
         </ScoreBordContainer>
       </BorderContainer>
       <Triangle />
-      <Circle ImgVal="Paper" />
-      <Circle ImgVal="Rock" />
-      <Circle ImgVal="Scissors" />
+      <Circle ImgVal="Paper" onClick={() => setIsChoiceMake(true)} />
+      <Circle ImgVal="Rock" onClick={() => setIsChoiceMake(true)} />
+      <Circle ImgVal="Scissors" onClick={() => setIsChoiceMake(true)} />
       <Button onClick={() => setIsRuleOpen(true)} />
       {isRuleOpen ? (
         <Rules
