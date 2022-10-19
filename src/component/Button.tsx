@@ -22,9 +22,9 @@ const Text = styled.h3`
   padding-right: 50px;
 `;
 
-function Button() {
+function Button({ onClick }: { onClick: () => void }) {
   return (
-    <ButtonRule>
+    <ButtonRule onClick={onClick}>
       <Text> RULES</Text>
     </ButtonRule>
   );

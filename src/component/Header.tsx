@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import Circle from "./Circle";
 import Button from "./Button";
+import Rules from "./Rules";
 
 const Wrapper = styled.div`
+  // (({ backdropFilter }: { backdropFilter: string }) =>
   // width: 500px;
   // height: auto;
   //left: 50%;
@@ -12,8 +14,9 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  //backdrop-filter: {backdropFilter};
 `;
-
+//)
 const FlexContainer = styled.div`
   // align-items: center;
   //padding: 20px;
@@ -90,6 +93,13 @@ const Triangle = styled.img`
 `;
 
 function Header() {
+  const [isRuleOpen, setIsRuleOpen] = useState<boolean>(false);
+
+  let background = "";
+  if (isRuleOpen) {
+    background = "blur(5px);";
+  }
+
   return (
     <Wrapper>
       <BorderContainer>
@@ -107,7 +117,15 @@ function Header() {
       <Circle ImgVal="Paper" />
       <Circle ImgVal="Rock" />
       <Circle ImgVal="Scissors" />
-      <Button />
+      <Button onClick={() => setIsRuleOpen(true)} />
+      {isRuleOpen ? (
+        <Rules
+          isRuleOpen={isRuleOpen}
+          setIsRuleOpen={() => setIsRuleOpen(false)}
+        />
+      ) : (
+        ""
+      )}
     </Wrapper>
   );
 }
