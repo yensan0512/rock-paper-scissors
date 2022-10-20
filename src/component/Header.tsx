@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import Circle from "./Circle";
 import Button from "./Button";
 import Rules from "./Rules";
+import ToggleButton from "./ToggleButton";
 
 const Wrapper = styled.div`
   // (({ backdropFilter }: { backdropFilter: string }) =>
@@ -124,6 +125,7 @@ function Header() {
 
   return (
     <Wrapper>
+      <ToggleButton />
       <BorderContainer>
         <FlexItemList>
           {/* <FlexItem>ROCK</FlexItem>
