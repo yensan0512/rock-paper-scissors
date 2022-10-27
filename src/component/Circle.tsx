@@ -53,7 +53,7 @@ export function Circle({
   let width = "120px";
   let ImgUrl = "static/icon-paper.svg";
   let colorItem = "--dark-paper-gradient";
-  let transform = "translate(-152%,-140%)";
+  let transform = "translate(-145%,-140%)";
 
   let shape = "triangle";
   if (isModeChoose) {
@@ -84,11 +84,11 @@ export function Circle({
     if (ImgVal === "Rock") {
       ImgUrl = "static/icon-rock.svg";
       colorItem = "--dark-rock-gradient";
-      transform = "translate(-64%,24%)";
+      transform = "translate(-52%,24%)";
     } else if (ImgVal === "Scissors") {
       ImgUrl = "static/icon-scissors.svg";
       colorItem = "--light-scissors-gradient";
-      transform = "translate(29%,-140%)";
+      transform = "translate(42%,-140%)";
     }
   }
 

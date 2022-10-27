@@ -12,7 +12,8 @@ const Triangle = styled.img(
   content: url(${ImageUrlCSS});
   top: 50%;
   left: 50%;
-  transform: translate(44%,105%);
+  position:relative;
+  transform: translate(-50%,100%);
 `
 );
 
