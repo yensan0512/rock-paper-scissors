@@ -37,8 +37,8 @@ const ImgBtn = styled.img`
 `;
 
 const ImgRule = styled.img(
-  ({ isOpen }: { isOpen: boolean }) => `
-  content: url("static/image-rules.svg");
+  ({ isOpen, imageUrl }: { isOpen: boolean; imageUrl: string }) => `
+  content: url(${imageUrl});
   width: 380px;
   height: 380px;
   position:absolute;
@@ -52,17 +52,24 @@ const ImgRule = styled.img(
 function Rules({
   isRuleOpen,
   setIsRuleOpen,
+  isModeChoose,
 }: {
   isRuleOpen: boolean;
   setIsRuleOpen: (b: boolean) => void;
+  isModeChoose: boolean;
 }) {
+  let imageUrl = "static/image-rules.svg";
+  if (isModeChoose) {
+    imageUrl = "static/image-rules-bonus.svg";
+  }
+
   return (
     <Wrapper>
       <FlexContainer>
         <Title>RULES</Title>
         <ImgBtn onClick={() => setIsRuleOpen(false)}></ImgBtn>
       </FlexContainer>
-      <ImgRule isOpen={isRuleOpen} />
+      <ImgRule isOpen={isRuleOpen} imageUrl={imageUrl} />
     </Wrapper>
   );
 }
