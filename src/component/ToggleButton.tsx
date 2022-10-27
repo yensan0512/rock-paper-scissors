@@ -5,12 +5,18 @@ const Wrapper = styled.div`
 
 background-color: var(--light-radial-gradient);
 color:white;
+
+&:hover{
+  cursor:pointer;
+}
+
 `;
 
-function ToggleButton() {
+
+function ToggleButton({ onClick }: { onClick: () => void }) {
   const apple = true;
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       {/* <div>{apple && <h2> Apple </h2>}</div> */}
       Apple
     </Wrapper>

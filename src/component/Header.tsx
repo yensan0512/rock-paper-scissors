@@ -28,7 +28,7 @@ const BorderContainer = styled.div`
   border: 1px solid white;
   padding: 10px;
   position: absolute;
-  top: 3%;
+  top: 7%;
   left: 7%;
   transform: translate(-8px, -5px);
   /* justify-content: stretch; */
@@ -85,13 +85,13 @@ const ScoreLabel = styled.h2`
   font-size: 60px;
 `;
 
-const Triangle = styled.img`
-  content: url("static/bg-triangle.svg");
+const Triangle = styled.img(({ ImageUrlCSS }: { ImageUrlCSS: string }) => `
+  content: url(${ImageUrlCSS});
   top: 50%;
   left: 50%;
   position: relative;
   transform: translate(-50%, -50%);
-`;
+`);
 
 function Header() {
   const [isRuleOpen, setIsRuleOpen] = useState<boolean>(false);
@@ -102,7 +102,10 @@ function Header() {
     background = "blur(5px);";
   }
 
+  let ImgUrl = "static/bg-triangle.svg";
+
   if (isChoiceMake) {
+    ImgUrl = "static/bg-pentagon.svg";
     // #pot {
     //   bottom: 15%;
     //   position: absolute;
@@ -125,7 +128,7 @@ function Header() {
 
   return (
     <Wrapper>
-      <ToggleButton />
+      <ToggleButton onClick={() => setIsChoiceMake(true)} />
       <BorderContainer>
         <FlexItemList>
           {/* <FlexItem>ROCK</FlexItem>
@@ -137,7 +140,7 @@ function Header() {
           <ScoreLabel>12</ScoreLabel>
         </ScoreBordContainer>
       </BorderContainer>
-      <Triangle />
+      <Triangle ImageUrlCSS={ImgUrl} />
       <Circle ImgVal="Paper" onClick={() => setIsChoiceMake(true)} />
       <Circle ImgVal="Rock" onClick={() => setIsChoiceMake(true)} />
       <Circle ImgVal="Scissors" onClick={() => setIsChoiceMake(true)} />

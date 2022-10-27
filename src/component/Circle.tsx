@@ -54,6 +54,14 @@ export function Circle({
     ImgUrl = "static/icon-scissors.svg";
     colorItem = "--light-scissors-gradient";
     transform = "translate(18%,-124%)";
+  } else if (ImgVal === "Lizard") {
+    ImgUrl = "static/icon-lizard.svg";
+    colorItem = "--light-lizard-gradient";
+    transform = "translate(18%,-124%)";
+  } else if (ImgVal === "Spock") {
+    ImgUrl = "static/icon-spock.svg";
+    colorItem = "--light-scissors-gradient";
+    transform = "translate(18%,-124%)";
   }
 
   return (
