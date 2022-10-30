@@ -43,12 +43,14 @@ export function Circle({
   ImgVal,
   isModeChoose,
   onClick,
+  value,
 }: //onClick,
-{
-  ImgVal: string;
-  isModeChoose: boolean;
-  onClick: () => void;
-}) {
+  {
+    ImgVal: string;
+    isModeChoose: boolean;
+    onClick?: () => void;
+    value: string;
+  }) {
   let height = "120px";
   let width = "120px";
   let ImgUrl = "static/icon-paper.svg";
@@ -90,6 +92,10 @@ export function Circle({
       colorItem = "--light-scissors-gradient";
       transform = "translate(42%,-140%)";
     }
+  }
+
+  if (value !== "") {
+    transform = "translate(-136%,-75%)";
   }
 
   return (

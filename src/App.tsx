@@ -140,7 +140,7 @@ function App() {
   }
   return (
     <Wrapper>
-      <ToggleButton onClick={() => setIsModeChoose(!isModeChoose)} />
+      <ToggleButton isModeChoose={isModeChoose} onClick={() => setIsModeChoose(!isModeChoose)} />
       <BorderContainer>
         <FlexItemList logoUrl={logoUrl} flexItemHeight={flexItemHeight}>
           {/* <FlexItem>ROCK</FlexItem>
@@ -152,7 +152,9 @@ function App() {
           <ScoreLabel>12</ScoreLabel>
         </ScoreBordContainer>
       </BorderContainer>
+
       <MainContainer isModeChoose={isModeChoose} />
+
       <Button onClick={() => setIsRuleOpen(true)} />
       {isRuleOpen ? (
         <Rules

@@ -13,12 +13,15 @@ color:white;
 `;
 
 
-function ToggleButton({ onClick }: { onClick: () => void }) {
-  const apple = true;
+function ToggleButton({ onClick, isModeChoose }: { onClick: () => void; isModeChoose: boolean; }) {
+  let mode = "Easy";
+  if (isModeChoose) {
+    mode = "Hard";
+  }
   return (
     <Wrapper onClick={onClick}>
       {/* <div>{apple && <h2> Apple </h2>}</div> */}
-      Apple
+      {mode}
     </Wrapper>
 
   );
